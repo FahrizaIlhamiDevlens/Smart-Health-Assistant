@@ -100,9 +100,7 @@ tbody tr:hover {
     background: #eff6ff;
 }
 
-/* ==========================
-   STATUS
-========================== */
+
 
 .status {
     display: inline-block;
@@ -114,9 +112,7 @@ tbody tr:hover {
     line-height: 1.5;
 }
 
-/* ==========================
-   BUTTON
-========================== */
+
 
 .back-button {
     display: inline-block;
@@ -134,9 +130,7 @@ tbody tr:hover {
     transform: translateY(-2px);
 }
 
-/* ==========================
-   EMPTY DATA
-========================== */
+
 
 .empty {
     text-align: center;
@@ -144,9 +138,7 @@ tbody tr:hover {
     color: #94a3b8;
 }
 
-/* ==========================
-   TABLET RESPONSIVE
-========================== */
+
 
 @media (max-width: 900px) {
 
@@ -169,9 +161,7 @@ tbody tr:hover {
 
 }
 
-/* ==========================
-   MOBILE RESPONSIVE
-========================== */
+
 
 @media (max-width: 600px) {
 
@@ -196,8 +186,7 @@ tbody tr:hover {
         border-radius: 12px;
     }
 
-    /* Menghilangkan header tabel */
-
+   
     .table-wrapper {
         overflow: visible;
     }
@@ -217,7 +206,7 @@ tbody tr:hover {
         width: 100%;
     }
 
-    /* Setiap baris menjadi kartu */
+
 
     tbody tr {
         display: block;

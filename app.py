@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 def koneksi_database():
     conn = sqlite3.connect('/tmp/health_assistant.db')
+    conn.row_factory = sqlite3.Row
     return conn
-
 
 
 def buat_tabel():
@@ -56,6 +56,8 @@ def ambil_riwayat():
         SELECT * FROM riwayat_pemeriksaan
         ORDER BY waktu DESC
     """).fetchall()
+
+    print("DATA RIWAYAT:", [dict(row) for row in data])
 
     conn.close()
 
