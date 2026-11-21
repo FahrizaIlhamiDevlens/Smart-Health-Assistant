@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Health Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="judul">
+        <h1>Smart Health Assistant</h1>
+         <p id="typing">Cek Kesehatan Tubuh Anda Hanya Dengan Satu Klik</p>
+    </nav>
+
+    <main class="container">
+
+        <form action="/" method="post">
+
+           
+            <input type="text" name="nama" required placeholder="Nama Anda">
+
+          
+            <input type="number" name="usia" min="1" required placeholder="Usia Anda">
+
+           
+            <input type="number" name="suhu" step="0.1" required placeholder="Suhu Tubuh (°C)">
+
+            <button type="submit">Chek Now</button>
+
+        </form>
+
+        {% if hasil %}
+
+        <div class="hasil">
+
+            <h2>Hasil Pemeriksaan</h2>
+
+            <p>Nama: {{ hasil.nama }}</p>
+            <p>Usia: {{ hasil.usia }} tahun</p>
+
+            <hr>
+
+            <h3>Konversi Suhu</h3>
+
+            <p>Celsius: {{ hasil.celcius }} °C</p>
+            <p>Fahrenheit: {{ hasil.fahrenheit }} °F</p>
+            <p>Kelvin: {{ hasil.kelvin }} K</p>
+
+            <hr>
+
+            <h3>Status Suhu</h3>
+            <p>{{ hasil.status }}</p>
+
+
+        </div>
+
+        {% endif %}
+        <div class="tombol"><a href="{{ url_for('history') }}">
+    Lihat Riwayat Pemeriksaan
+</a></div>
+
+    </main>
+
+    <footer>
+        <p>Smart Health Assistant Project</p>
+        <p>Create By Fahriza ilhami </p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

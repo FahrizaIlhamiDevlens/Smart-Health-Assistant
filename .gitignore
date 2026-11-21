@@ -1,0 +1,7 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+health_assistant.db
+.env
+.vercel/

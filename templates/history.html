@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Riwayat Pemeriksaan</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='history.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <h1>Riwayat Pemeriksaan</h1>
+            <p>Data hasil pemeriksaan suhu tubuh pengguna.</p>
+        </header>
+
+        <section class="history-card">
+
+            <div class="table-wrapper">
+
+                <table>
+
+                 
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Usia</th>
+                            <th>Celsius</th>
+                            <th>Fahrenheit</th>
+                            <th>Kelvin</th>
+                            <th>Status</th>
+                            <th>Waktu</th>
+                        </tr>
+                    </thead>
+
+                   
+                    <tbody>
+
+                        {% for data in riwayat %}
+
+                        <tr>
+                            <td data-label="Nama">
+                                {{ data.nama }}
+                            </td>
+
+                            <td data-label="Usia">
+                                {{ data.usia }} tahun
+                            </td>
+
+                            <td data-label="Celsius">
+                                {{ data.celcius }} °C
+                            </td>
+
+                            <td data-label="Fahrenheit">
+                                {{ data.fahrenheit }} °F
+                            </td>
+
+                            <td data-label="Kelvin">
+                                {{ data.kelvin }} K
+                            </td>
+
+                            <td data-label="Status">
+                                <span class="status">
+                                    {{ data.status }}
+                                </span>
+                            </td>
+
+                            <td data-label="Waktu">
+                                {{ data.waktu }}
+                            </td>
+                        </tr>
+
+                        {% else %}
+
+                        <tr>
+                            <td colspan="7" class="empty">
+                                Belum ada riwayat pemeriksaan.
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <a href="/" class="back-button">
+                ← Kembali ke halaman utama
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+

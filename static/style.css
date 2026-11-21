@@ -1,0 +1,237 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #131B2B;
+    color: #263746;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*bagian navbar*/
+
+.judul {
+    background: linear-gradient(135deg, #2F4A63, #5B91A3);
+    padding: 22px 15px;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 14px 14px;
+    border-bottom: #FA3518 1px solid;
+    
+}
+
+.judul h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FA3518;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+.container {
+    width: calc(100% - 30px);
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 22px 18px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border: #087f8c 1px solid;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid #d5e2e8;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background: #fbfdfe;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-color: #16a6a0;
+    box-shadow: 0 0 0 3px rgba(22, 166, 160, 0.12);
+}
+
+
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #CFEAE0, #EFE8DD);
+    color: #FF5722;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    border: #FF5722 1px solid;
+}
+
+button:active {
+    transform: scale(0.98);
+    color: #2F4A63;
+}
+
+
+
+.hasil {
+    margin-top: 25px;
+    padding: 18px 15px;
+    background: #f3fbfa;
+    border: 1px solid #d6efeb;
+    border-radius: 11px;
+    overflow-wrap: break-word;
+}
+
+.hasil h2 {
+    color: #087f8c;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.hasil h3 {
+    color: #087f8c;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.hasil p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+.hasil hr {
+    border: none;
+    border-top: 1px solid #d5e8e5;
+    margin: 16px 0;
+}
+
+
+
+footer {
+    margin-top: auto;
+    padding: 18px 10px;
+    text-align: center;
+    background: #e4f0f3;
+    color: #71838d;
+    font-size: 12px;
+}
+
+.tombol {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+   
+}
+
+.tombol a {
+    display: inline-block;
+    padding: 12px 22px;
+
+    background: linear-gradient(135deg, #CFEAE0, #EFE8DD);
+    color: #FF5722;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+ border: #FF5722 1px solid;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+
+
+
+.tombol a:hover {
+    background: hwb(165 48% 0%);
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 15px #089cc540;
+}
+
+
+
+.tombol a:active {
+    transform: scale(0.96);
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 600px) {
+    .judul h1 {
+        font-size: 27px;
+    }
+
+    .container {
+        margin: 40px auto;
+        padding: 30px;
+    }
+
+    .hasil {
+        padding: 22px;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 520px;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(8, 127, 140, 0.2);
+    }
+
+   
+
+    .tombol {
+        width: 100%;
+    }
+
+    .tombol a {
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        padding: 13px;
+    }
+
+
+}

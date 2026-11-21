@@ -1,0 +1,339 @@
+
+/* ==========================
+   GLOBAL RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 30px 20px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    min-width: 0;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header {
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #1d4ed8;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.history-card {
+    width: 100%;
+    min-width: 0;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* ==========================
+   TABLE CONTAINER
+========================== */
+
+.table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+/* ==========================
+   TABLE
+========================== */
+
+table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 15px 10px;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+tbody tr:hover {
+    background: #eff6ff;
+}
+
+/* ==========================
+   STATUS
+========================== */
+
+.status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    line-height: 1.5;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   EMPTY DATA
+========================== */
+
+.empty {
+    text-align: center;
+    padding: 35px;
+    color: #94a3b8;
+}
+
+/* ==========================
+   TABLET RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .history-card {
+        padding: 18px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 18px 12px;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .header p {
+        font-size: 12px;
+    }
+
+    .history-card {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    /* Menghilangkan header tabel */
+
+    .table-wrapper {
+        overflow: visible;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        min-width: 0;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody {
+        display: block;
+        width: 100%;
+    }
+
+    /* Setiap baris menjadi kartu */
+
+    tbody tr {
+        display: block;
+        width: 100%;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    tbody tr:hover {
+        background: #f8fafc;
+    }
+
+    /* Isi setiap kartu */
+
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+
+        width: 100%;
+        padding: 11px 0;
+
+        font-size: 12px;
+        line-height: 1.5;
+
+        border-bottom: 1px solid #e2e8f0;
+
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    tbody td:last-child {
+        border-bottom: none;
+    }
+
+    /* Label kolom */
+
+    tbody td::before {
+        content: attr(data-label);
+
+        font-weight: bold;
+        color: #64748b;
+
+        flex: 0 0 85px;
+        max-width: 85px;
+    }
+
+    tbody td > * {
+        min-width: 0;
+        max-width: 65%;
+        text-align: right;
+        overflow-wrap: anywhere;
+    }
+
+    .status {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    /* Jika belum ada data */
+
+    tbody td.empty {
+        display: block;
+        text-align: center;
+        padding: 20px 5px;
+    }
+
+    tbody td.empty::before {
+        content: none;
+    }
+
+    /* Tombol kembali */
+
+    .back-button {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        padding: 12px;
+    }
+
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 12px 8px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .history-card {
+        padding: 9px;
+    }
+
+    tbody tr {
+        padding: 9px;
+    }
+
+    tbody td {
+        font-size: 11px;
+    }
+
+    tbody td::before {
+        flex-basis: 72px;
+        max-width: 72px;
+    }
+
+}
