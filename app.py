@@ -7,8 +7,7 @@ app = Flask(__name__)
 
 
 def koneksi_database():
-    conn = sqlite3.connect('health_assistant.db')
-    conn.row_factory = sqlite3.Row
+    conn = sqlite3.connect('/tmp/health_assistant.db')
     return conn
 
 
