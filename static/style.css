@@ -1,5 +1,22 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-main: #111827;
+    --bg-card: #FFFFFF;
+    --bg-soft: #F1F5F9;
+    --primary: #14B8A6;
+    --primary-dark: #0F9488;
+    --secondary: #38BDF8;
+    --accent: #A78BFA;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --text-light: #F8FAFC;
+    --border: #E2E8F0;
+    --shadow: 0 10px 35px rgba(15, 23, 42, 0.10);
+    --radius: 16px;
+}
 
 * {
     margin: 0;
@@ -8,49 +25,45 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #131B2B;
-    color: #263746;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image:
+        radial-gradient(circle at 10% 10%, rgba(20, 184, 166, 0.12), transparent 35%),
+        radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.10), transparent 35%);
 }
 
-/*bagian navbar*/
-
 .judul {
-    background: linear-gradient(135deg, #2F4A63, #5B91A3);
-    padding: 22px 15px;
+    background: linear-gradient(135deg, #1E293B, #164E63, #0F766E);
+    padding: 28px 18px;
     text-align: center;
-    color: white;
-    border-radius: 0 0 14px 14px;
-    border-bottom: #FA3518 1px solid;
-    
+    color: var(--text-light);
+    border-radius: 0 0 22px 22px;
+    border-bottom: 3px solid var(--primary);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
 }
 
 .judul h1 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #FA3518;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
 
 .container {
     width: calc(100% - 30px);
     max-width: 500px;
-    margin: 25px auto;
-    padding: 22px 18px;
-    background: white;
-    border-radius: 14px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-    border: #087f8c 1px solid;
+    margin: 30px auto;
+    padding: 25px 22px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: var(--shadow);
 }
-
-
 
 form {
     display: flex;
@@ -59,143 +72,146 @@ form {
 
 label {
     font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #34495e;
+    font-weight: 700;
+    margin-bottom: 9px;
+    color: var(--text-main);
 }
 
 input {
     width: 100%;
     min-width: 0;
-    padding: 13px;
-    margin-bottom: 18px;
-    border: 1px solid #d5e2e8;
-    border-radius: 8px;
+    padding: 14px 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
     outline: none;
-    font-size: 16px;
-    background: #fbfdfe;
-    transition: 0.2s;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text-main);
+    background: #F8FAFC;
+    transition: all 0.25s ease;
+}
+
+input::placeholder {
+    color: #94A3B8;
 }
 
 input:focus {
-    border-color: #16a6a0;
-    box-shadow: 0 0 0 3px rgba(22, 166, 160, 0.12);
+    border-color: var(--primary);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.12);
 }
-
-
 
 button {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, #CFEAE0, #EFE8DD);
-    color: #FF5722;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #FFFFFF;
     border: none;
-    border-radius: 9px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 11px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
-    transition: 0.2s;
-    border: #FF5722 1px solid;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 15px rgba(20, 184, 166, 0.20);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0F9488, #0284C7);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(20, 184, 166, 0.25);
 }
 
 button:active {
     transform: scale(0.98);
-    color: #2F4A63;
 }
-
-
 
 .hasil {
     margin-top: 25px;
-    padding: 18px 15px;
-    background: #f3fbfa;
-    border: 1px solid #d6efeb;
-    border-radius: 11px;
+    padding: 20px;
+    background: linear-gradient(135deg, #F0FDFA, #F0F9FF);
+    border: 1px solid #CCFBF1;
+    border-left: 4px solid var(--primary);
+    border-radius: 12px;
     overflow-wrap: break-word;
 }
 
 .hasil h2 {
-    color: #087f8c;
+    color: #0F766E;
     font-size: 20px;
+    font-weight: 800;
     margin-bottom: 18px;
 }
 
 .hasil h3 {
-    color: #087f8c;
+    color: #0F766E;
     font-size: 16px;
-    margin: 15px 0;
+    font-weight: 700;
+    margin: 16px 0;
 }
 
 .hasil p {
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.8;
+    color: #475569;
     margin: 8px 0;
 }
 
 .hasil hr {
     border: none;
-    border-top: 1px solid #d5e8e5;
+    border-top: 1px solid #CCFBF1;
     margin: 16px 0;
-}
-
-
-
-footer {
-    margin-top: auto;
-    padding: 18px 10px;
-    text-align: center;
-    background: #e4f0f3;
-    color: #71838d;
-    font-size: 12px;
 }
 
 .tombol {
     display: flex;
     justify-content: center;
     margin-top: 25px;
-   
 }
 
 .tombol a {
     display: inline-block;
-    padding: 12px 22px;
-
-    background: linear-gradient(135deg, #CFEAE0, #EFE8DD);
-    color: #FF5722;
-
+    padding: 13px 24px;
+    background: #FFFFFF;
+    color: var(--primary-dark);
     text-decoration: none;
+    font-family: inherit;
     font-size: 14px;
-    font-weight: 600;
- border: #FF5722 1px solid;
+    font-weight: 700;
+    border: 1.5px solid var(--primary);
     border-radius: 10px;
-
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
-
-
 
 .tombol a:hover {
-    background: hwb(165 48% 0%);
+    background: var(--primary);
+    color: #FFFFFF;
     transform: translateY(-3px);
-
-    box-shadow: 0 5px 15px #089cc540;
+    box-shadow: 0 7px 18px rgba(20, 184, 166, 0.25);
 }
-
-
 
 .tombol a:active {
-    transform: scale(0.96);
+    transform: scale(0.97);
 }
 
-
-
-/* =========================
-   TABLET
-========================= */
+footer {
+    margin-top: auto;
+    padding: 20px 12px;
+    text-align: center;
+    background: #1E293B;
+    color: #94A3B8;
+    font-size: 12px;
+    border-top: 1px solid #334155;
+}
 
 @media (min-width: 600px) {
+    .judul {
+        padding: 32px 20px;
+    }
+
     .judul h1 {
-        font-size: 27px;
+        font-size: 28px;
     }
 
     .container {
@@ -204,23 +220,14 @@ footer {
     }
 
     .hasil {
-        padding: 22px;
+        padding: 23px;
     }
 }
-
-
 
 @media (min-width: 1024px) {
     .container {
         max-width: 520px;
     }
-
-    button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(8, 127, 140, 0.2);
-    }
-
-   
 
     .tombol {
         width: 100%;
@@ -229,9 +236,21 @@ footer {
     .tombol a {
         width: 100%;
         text-align: center;
-        font-size: 13px;
-        padding: 13px;
+        font-size: 14px;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .judul h1 {
+        font-size: 20px;
     }
 
+    .container {
+        padding: 20px 16px;
+    }
 
+    .hasil {
+        padding: 16px 13px;
+    }
 }
